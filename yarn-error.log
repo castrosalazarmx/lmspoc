@@ -1,0 +1,50 @@
+Arguments: 
+  /Users/slugger/.nvm/versions/node/v8.11.1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js build
+
+PATH: 
+  /Users/slugger/.jenv/shims:/Users/slugger/.jenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/slugger/.jenv/shims:/Users/slugger/.jenv/bin:/Users/slugger/.nvm/versions/node/v8.11.1/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  8.11.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "lmspoc",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:castrosalazarmx/lmspoc.git",
+    "scripts": {
+      "build": "cd delivery; CI=true node delivery/node_modules/react-scripts/bin/react-scripts.js build; cp -r build ../build",
+      "test": "cd delivery; CI=true node node_modules/react-scripts/bin/react-scripts.js test --env=jsdom"
+    },
+    "author": "",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c cd delivery; CI=true node delivery/node_modules/react-scripts/bin/react-scripts.js build; cp -r build ../build
+  Directory: /Users/slugger/projects/lmspoc
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

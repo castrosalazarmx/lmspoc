@@ -1,0 +1,62 @@
+service: lcms
+runtime: php
+env: flex
+
+beta_settings:
+  cloud_sql_instances: unitylearn-201416:us-central1:lcmsdb
+
+runtime_config:
+  document_root: web
+
+env_variables:
+  WHITELIST_FUNCTIONS: escapeshellarg,escapeshellcmd,exec,pclose,popen,shell_exec,phpversion,php_uname
+
+handlers:
+- url: /(.*\.(htm|html|css|js))
+  static_files: web/\1
+  upload: web/.*\.(htm|html|css|js)$
+  application_readable: true
+
+- url: /app/(.*\.(ico|jpg|jpeg|png|gif|woff|ttf|otf|eot|svg))
+  static_files: web/app/\1
+  upload: web/app/.*\.(ico|jpg|jpeg|png|gif|woff|ttf|otf|eot|svg)$
+  application_readable: true
+
+- url: /(.*\.(ico|jpg|jpeg|png|gif|woff|ttf|otf|eot|svg))
+  static_files: web/\1
+  upload: web/.*\.(ico|jpg|jpeg|png|gif|woff|ttf|otf|eot|svg)$
+  application_readable: true
+
+- url: /wp/wp-includes/images/media/(.*\.(ico|jpg|jpeg|png|gif|woff|ttf|otf|eot|svg))
+  static_files: web/wp/wp-includes/images/media/\1
+  upload: web/wp/wp-includes/images/media/.*\.(ico|jpg|jpeg|png|gif|woff|ttf|otf|eot|svg)$
+  application_readable: true
+
+- url: /wp/wp-admin/(.+)
+  script: web/wp/wp-admin/\1
+  secure: always
+
+- url: /wp/wp-admin/
+  script: web/wp/wp-admin/index.php
+  secure: always
+
+- url: /wp/wp-login.php
+  script: web/wp/wp-login.php
+  secure: always
+
+- url: /wp/wp-cron.php
+  script: web/wp/wp-cron.php
+  login: admin
+
+- url: /wp/wp-(.+).php
+  script: web/wp/wp-\1.php
+
+- url: /(.+)?/?
+  script: web/index.php
+
+skip_files:
+- ^(.*/)?\.zip$
+- ^(.*/)?\.bat$
+- ^(.*/)?\.sh$
+- ^(.*/)?\.md$
+- ^vendor

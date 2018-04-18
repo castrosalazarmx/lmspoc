@@ -1,0 +1,19 @@
+# Application
+web/app/plugins/*
+!web/app/plugins/.gitkeep
+web/app/mu-plugins/*/
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+
+# Composer
+vendor/*
+!vendor/.gitkeep
+composer.lock
+
+# WordPress
+web/wp
+web/.htaccess
+
+## WPCS
+wpcs

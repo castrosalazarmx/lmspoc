@@ -6,6 +6,8 @@ cache:
     - node_modules
 before_install:
     - cd google-nodejs
+before_script:
+    - cd google-nodejs
 script: 
     - npm install -g serverless
     - serverless deploy

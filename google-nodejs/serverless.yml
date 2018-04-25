@@ -1,7 +1,7 @@
 service: unitylearn-201416
 
 provider:
-  name: google
+  name: function-1
   runtime: nodejs
   project: unitylearn-201416
   # the path to the credentials file needs to be absolute

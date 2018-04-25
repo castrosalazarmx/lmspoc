@@ -4,6 +4,7 @@ node_js:
 cache:
   directories:
     - node_modules
+    - google-nodejs/node_modules
 script: 
     - cd google-nodejs
     - npm install

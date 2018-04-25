@@ -5,7 +5,7 @@ provider:
   runtime: nodejs
   project: unitylearn-201416
   # the path to the credentials file needs to be absolute
-  credentials: $TRAVIS_BUILD_DIR/client-secret.json
+  credentials: ${env:TRAVIS_BUILD_DIR}/client-secret.json
 
 plugins:
   - serverless-google-cloudfunctions

@@ -7,6 +7,6 @@ cache:
     - google-nodejs/node_modules
 script: 
     - cd google-nodejs
-    - npm install
+    - yarn install
     - npm install -g serverless
     - serverless deploy

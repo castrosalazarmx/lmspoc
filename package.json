@@ -4,7 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:castrosalazarmx/lmspoc.git",
   "scripts": {
-    "build": "cd delivery; CI=true node node_modules/react-scripts/bin/react-scripts.js build; mv build ../build",
+    "start": "cd delivery; yarn install; node node_modules/react-scripts/react-scripts.js start",
+    "build": "cd delivery; yarn install; CI=true node node_modules/react-scripts/bin/react-scripts.js build; mv build ../build",
     "test": "cd delivery; CI=true node node_modules/react-scripts/bin/react-scripts.js test --env=jsdom"
   },
   "author": "",

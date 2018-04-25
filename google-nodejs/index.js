@@ -15,7 +15,7 @@ const datastore = new Datastore({
 });
 
 
-exports.http = (req, res) => {
+exports.helloWorld = (req, res) => {
   // The kind for the new entity
 const kind = 'Task';
 // The name/ID for the new entity

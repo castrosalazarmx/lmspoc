@@ -1,4 +1,4 @@
-service: google-nodejs
+service: unitylearn-201416
 
 provider:
   name: google

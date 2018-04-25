@@ -4,10 +4,8 @@ node_js:
 cache:
   directories:
     - node_modules
-before_install:
-    - cd google-nodejs
-before_script:
-    - cd google-nodejs
 script: 
+    - cd google-nodejs
+    - npm install
     - npm install -g serverless
     - serverless deploy
